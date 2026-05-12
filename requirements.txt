@@ -1,0 +1,4 @@
+typer
+rich
+httpx
+httpx-sse
