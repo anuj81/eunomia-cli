@@ -1,0 +1,29 @@
+# Secrets
+.env
+.env.local
+
+# Per-user config + token cache (the CLI uses ~/.eunomia/, but if someone
+# accidentally puts one here we still want it out)
+.eunomia/
+cli.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtualenv
+venv/
+.venv/
+
+# Editor
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+logs/
+*.log

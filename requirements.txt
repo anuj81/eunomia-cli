@@ -2,3 +2,10 @@ typer
 rich
 httpx
 httpx-sse
+
+# Token decode (Phase D)
+python-jose[cryptography]
+
+# test
+pytest
+pytest-httpx
