@@ -26,7 +26,10 @@ def ask(query: str, token: str = typer.Option("finance-token", help="User Auth T
                     if sse.event == "complete":
                         data = json.loads(sse.data)
                         console.print("\n[bold green]Execution Complete![/bold green]")
-                        console.print(f"[dim]Executed SQL: {data['executed_sql']}[/dim]\n")
+                        from rich.panel import Panel
+                        from rich.syntax import Syntax
+                        sql_syntax = Syntax(data.get('executed_sql', 'No SQL returned'), "sql", theme="monokai", line_numbers=False)
+                        console.print(Panel(sql_syntax, title="[bold blue]Generated SQL[/bold blue]", border_style="blue"))
                         
                         # Render table
                         results = data['results']
